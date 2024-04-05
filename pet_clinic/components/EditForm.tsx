@@ -88,7 +88,7 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
                 width: "500px",
             }}
         >
-            <h1 className="form-h1-edit text-primary font-bold text-2xl p-8 flex justify-items-center h-30">
+            <h1 className="form-h1-edit text-specialPurple font-bold text-2xl p-8 flex justify-items-center h-30">
                 Edit Patient
                 <Button onClick={() => handleDelete(props.patientId)} sx={{ color: "#e05b5b" }}>
                     <FaTrash size={18} />

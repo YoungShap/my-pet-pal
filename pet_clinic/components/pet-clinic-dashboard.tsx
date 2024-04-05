@@ -59,7 +59,7 @@ const Title: React.FC = () => {
       <div className='flex justify-center'>
         <Searchbar />
       </div>
-      {searchWord && <p className='m-auto'>Active Search({searchWord})</p>}
+      {searchWord && <p className='m-auto text-softWhite'>Active Search({searchWord})</p>}
     </>
   );
 };

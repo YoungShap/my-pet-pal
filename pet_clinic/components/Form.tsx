@@ -51,7 +51,7 @@ const Form = (props: { handleClose: () => void }) => {
       width: "500px",
     }}
   >
-    <h1 className="form-h1 text-primary font-bold text-2xl p-8 m-auto">
+    <h1 className="form-h1 text-specialPurple font-bold text-2xl p-8 m-auto">
       Add Patient
     </h1>
     <TextField
