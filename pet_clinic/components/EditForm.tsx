@@ -2,6 +2,7 @@
 import { IPatient } from "@/lib/interfaces";
 import { Button, TextField } from "@mui/material";
 import React, { useState, useEffect } from "react";
+import { FaTrash } from "react-icons/fa";
 
 const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
     const [formData, setFormData] = useState<IPatient>({
@@ -60,6 +61,20 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleDelete = async (patientId?: string) => {
+        try {
+            const response = await fetch(`/api/patients?id=${patientId}`, {
+                method: 'DELETE',
+            });
+            if (!response.ok) {
+                throw new Error('Failed to delete patient');
+            }
+            props.handleClose();
+        } catch (error) {
+            console.error('Error deleting patient:', error);
+        }
+    };
+
     return (
         <form className="crud-form"
             onSubmit={handleSubmit}
@@ -69,10 +84,16 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 padding: "40px",
-                width:"500px",
+                width: "500px",
             }}
         >
-            <h1 className="form-h1 text-primary font-bold text-2xl p-8">Edit Patient</h1>
+            <h1 className="form-h1-edit text-primary font-bold text-2xl p-8 flex justify-items-center h-30">
+                Edit Patient
+                <Button onClick={() => handleDelete(props.patientId)} sx={{ color: '#e05b5b' }}>
+                    <FaTrash size={18} />
+                </Button>
+
+            </h1>
             <TextField sx={{ width: "100%", marginBottom: '10px' }}
                 label="Name"
                 variant="filled"

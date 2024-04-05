@@ -50,7 +50,7 @@ const Form = (props: { handleClose: () => void }) => {
         width:"500px",
       }}
     >
-      <h1 className="form-h1 text-primary font-bold text-2xl p-8">Add Patient</h1>
+      <h1 className="form-h1 text-primary font-bold text-2xl p-8 m-auto">Add Patient</h1>
       <TextField sx={{ width: "100%", marginBottom: '10px' }}
         label="Name"
         variant="filled"

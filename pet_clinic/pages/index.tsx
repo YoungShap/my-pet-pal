@@ -9,6 +9,8 @@ export const GeneralContext = createContext<any>(undefined);
 const Home: NextPage = () => {
   const [open, setOpen] = useState(false);
   const [patientId, setPatientId] = useState("");
+  const [search, setSearch] = useState('');
+  const [searchWord, setSearchWord] = useState('');
 
   const handleOpen = (id?: string) => {
     setOpen(true);
@@ -21,9 +23,9 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <GeneralContext.Provider value={{ open, handleOpen }}>
+      <GeneralContext.Provider value={{ open, handleOpen ,search,
+            setSearch, searchWord, setSearchWord, }}>
         <PetClinicDashboard />
-        <button className='block mx-auto bg-blue text-white px-4 py-2 rounded-md' onClick={() => handleOpen(undefined)}>Add Patient +</button>
         <ModalDialog open={open} handleClose={handleClose} patientId={patientId} />
       </GeneralContext.Provider>
     </div>

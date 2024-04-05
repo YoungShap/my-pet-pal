@@ -5,41 +5,63 @@
 @tailwind utilities;
 
 body {
-    background: linear-gradient(90deg, rgba(204, 220, 224, 1), rgba(188, 228, 255, 1), rgba(200, 210, 211, 1))
+    background-color: #373d44;
 }
 
 @media screen and (max-width:556px) {
     .crud-form {
-        width:300px !important;
+        width: 300px !important;
+    }
+
+    .form-h1-edit {
+        width: 250px;
+        font-size: 20px;
+        margin: auto;
     }
 }
 
 @media screen and (max-width:360px) {
     .crud-form {
-        width:250px !important;
+        width: 250px !important;
     }
+
     .form-h1 {
-        width:220px !important;
-        text-align: center;
+        width: 220px !important;
+        margin-left: -10px;
+    }
+
+    .form-h1-edit {
+        width: 250px;
+        font-size: 18px;
+        margin-left: -16px !important;
     }
 }
 
-@media screen and (width:280px) {
+@media screen and (max-width:290px) {
     .crud-form {
-        width:220px !important;
+        width: 230px !important;
     }
-}
 
-@media screen and (width:280px) {
+    .form-h1-edit {
+        margin-left: -25px !important;
+    }
+
     .form-h1 {
-        width:220px !important;
+        font-size: 22px;
+        width: 220px !important;
         text-align: center;
+        margin-left: -35px;
     }
 }
 
 @media screen and (max-width:768px) {
-   .main-h1 {
+    .main-h1 {
         font-size: 36px !important;
+    }
+
+    #add-btn {
+        display: flex;
+        justify-content: center !important;
     }
 }
 

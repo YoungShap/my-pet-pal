@@ -9,6 +9,9 @@ import Paper from '@mui/material/Paper';
 import { Button } from '@mui/material';
 import { FaEdit } from 'react-icons/fa';
 import { GeneralContext } from 'pages';
+import Searchbar, { search } from '../components/SearchBar';
+import { IoPawSharp } from "react-icons/io5";
+
 
 interface Patient {
   _id: string;
@@ -49,45 +52,57 @@ export const PetClinicDashboard: React.FC = () => {
 };
 
 const Title: React.FC = () => {
+  const { searchWord } = useContext(GeneralContext);
   return (
-    <h1 className=" main-h1 text-primary font-bold text-5xl m-auto">Pet Clinic Dashboard</h1>
+    <>
+      <h1 className="flex gap-2 main-h1 text-primary font-bold text-5xl m-auto">Pet Clinic <IoPawSharp className='text-softWhite' /></h1>
+      <div className='flex justify-center'>
+        <Searchbar />
+      </div>
+      {searchWord && <p className='m-auto'>Active Search({searchWord})</p>}
+    </>
   );
 };
 
 const PatientTable: React.FC<{ patients: Patient[] }> = ({ patients }) => {
-  const { handleOpen } = useContext(GeneralContext);
+  const { handleOpen, searchWord } = useContext(GeneralContext);
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Phone</TableCell>
-            <TableCell>Pet Name</TableCell>
-            <TableCell>Pet Age</TableCell>
-            <TableCell>Pet Type</TableCell>
-            <TableCell>Action</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {patients.map((patient) => (
-            <TableRow key={patient._id}>
-              <TableCell component="th" scope="row">
-                {patient.name}
-              </TableCell>
-              <TableCell>{patient.phone}</TableCell>
-              <TableCell>{patient.petName}</TableCell>
-              <TableCell>{patient.petAge}</TableCell>
-              <TableCell>{patient.petType}</TableCell>
-
-              <TableCell>
-                <Button onClick={() => handleOpen(patient._id)}><FaEdit size={22} /></Button>
-              </TableCell>
+    <>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead sx={{ backgroundColor: '#000000c4' }}>
+            <TableRow sx={{ '& > *': { color: '#adc9f6', fontSize: "16px" } }}>
+              <TableCell>Name</TableCell>
+              <TableCell>Phone</TableCell>
+              <TableCell>Pet Name</TableCell>
+              <TableCell>Pet Age</TableCell>
+              <TableCell>Pet Type</TableCell>
+              <TableCell>Action</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody sx={{ backgroundColor: "#ddedfa" }}>
+            {patients.filter(p => search(searchWord, p.phone, p.name, p.petName, p.petAge, p.petType)).map((patient) => (
+              <TableRow sx={{ '& > *': { color: 'black', fontSize: "15px" } }} key={patient._id}>
+                <TableCell component="th" scope="row">
+                  {patient.name}
+                </TableCell>
+                <TableCell>{patient.phone}</TableCell>
+                <TableCell>{patient.petName}</TableCell>
+                <TableCell>{patient.petAge}</TableCell>
+                <TableCell>{patient.petType}</TableCell>
+
+                <TableCell>
+                  <Button onClick={() => handleOpen(patient._id)}><FaEdit size={22} /></Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <button id='add-btn' className='flex justify-start items-center text-center w-32 mt-6 bg-purple text-white px-4 py-2 rounded-md' onClick={() => handleOpen(undefined)}>
+        Add Patient +
+      </button>
+    </>
   );
 };
 

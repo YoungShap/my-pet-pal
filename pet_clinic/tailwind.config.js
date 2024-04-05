@@ -6,10 +6,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#676772",
+      primary: "#92bcff",
       white:'white',
       brown: '#8B4513',
-      blue:'#27456fe3',
+      blue:'#92bcff',
+      purple: "#7c7cff",
+      softWhite:"#dbe7ff"
     },
     fontFamily: {
       mono: ["Roboto", "monospace"],
