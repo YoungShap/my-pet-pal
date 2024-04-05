@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: linear-gradient(90deg, rgba(204, 220, 224, 1), rgba(188, 228, 255, 1), rgba(200, 210, 211, 1))
+}
+
+@media screen and (max-width:556px) {
+    .crud-form {
+        width:300px !important;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .crud-form {
+        width:250px !important;
+    }
+    .form-h1 {
+        width:220px !important;
+        text-align: center;
+    }
+}
+
+@media screen and (width:280px) {
+    .crud-form {
+        width:220px !important;
+    }
+}
+
+@media screen and (width:280px) {
+    .form-h1 {
+        width:220px !important;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+   .main-h1 {
+        font-size: 36px !important;
+    }
+}
+
+@media screen and (max-width:376px) {
+    .main-h1 {
+        font-size: 26px !important;
+    }
+}
