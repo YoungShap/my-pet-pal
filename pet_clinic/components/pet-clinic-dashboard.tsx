@@ -80,7 +80,7 @@ const PatientTable: React.FC<{ patients: Patient[] }> = ({ patients }) => {
               <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: "#ddedfa" }}>
+          <TableBody sx={{ backgroundColor: "#ecf7ff" }}>
             {patients.filter(p => search(searchWord, p.phone, p.name, p.petName, p.petAge, p.petType)).map((patient) => (
               <TableRow sx={{ '& > *': { color: 'black', fontSize: "15px" } }} key={patient._id}>
                 <TableCell component="th" scope="row">
