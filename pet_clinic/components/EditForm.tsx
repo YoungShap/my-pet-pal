@@ -76,7 +76,8 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
     };
 
     return (
-        <form className="crud-form"
+        <form
+            className="crud-form bg-main"
             onSubmit={handleSubmit}
             style={{
                 display: "flex",
@@ -89,36 +90,45 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
         >
             <h1 className="form-h1-edit text-primary font-bold text-2xl p-8 flex justify-items-center h-30">
                 Edit Patient
-                <Button onClick={() => handleDelete(props.patientId)} sx={{ color: '#e05b5b' }}>
+                <Button onClick={() => handleDelete(props.patientId)} sx={{ color: "#e05b5b" }}>
                     <FaTrash size={18} />
                 </Button>
-
             </h1>
-            <TextField sx={{ width: "100%", marginBottom: '10px' }}
+            <TextField
+                sx={{ width: "100%", marginBottom: "10px" }}
                 label="Name"
                 variant="filled"
                 required
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                InputLabelProps={{ className: "text-white" }}
+                InputProps={{ className: "text-white" }}
             />
-            <TextField sx={{ width: "100%", marginBottom: '10px' }}
+            <TextField
+                sx={{ width: "100%", marginBottom: "10px" }}
                 label="Phone"
                 variant="filled"
                 required
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                InputLabelProps={{ className: "text-white" }}
+                InputProps={{ className: "text-white" }}
             />
-            <TextField sx={{ width: "100%", marginBottom: '10px' }}
+            <TextField
+                sx={{ width: "100%", marginBottom: "10px" }}
                 label="Pet Name"
                 variant="filled"
                 required
                 name="petName"
                 value={formData.petName}
                 onChange={handleChange}
+                InputLabelProps={{ className: "text-white" }}
+                InputProps={{ className: "text-white" }}
             />
-            <TextField sx={{ width: "100%", marginBottom: '10px' }}
+            <TextField
+                sx={{ width: "100%", marginBottom: "10px" }}
                 label="Pet Age"
                 type="number"
                 variant="filled"
@@ -126,8 +136,11 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
                 name="petAge"
                 value={formData.petAge}
                 onChange={handleChange}
+                InputLabelProps={{ className: "text-white" }}
+                InputProps={{ className: "text-white" }}
             />
-            <TextField sx={{ width: "100%", marginBottom: '10px' }}
+            <TextField
+                sx={{ width: "100%", marginBottom: "10px" }}
                 label="Pet Type"
                 type="text"
                 variant="filled"
@@ -135,20 +148,19 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
                 name="petType"
                 value={formData.petType}
                 onChange={handleChange}
+                InputLabelProps={{ className: "text-white" }}
+                InputProps={{ className: "text-white" }}
             />
             <div>
-                <Button sx={{}} onClick={() => props.handleClose()}>
+                <Button sx={{color:"#e05b5b"}} onClick={() => props.handleClose()}>
                     Close
                 </Button>
-                <Button
-                    color="primary"
-                    type="submit"
-                    sx={{}}
-                >
+                <Button color="primary" type="submit" sx={{color:'#bad7ff'}}>
                     Save
                 </Button>
             </div>
         </form>
+
     );
 };
 

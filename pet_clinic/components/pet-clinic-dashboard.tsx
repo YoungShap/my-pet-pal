@@ -68,7 +68,7 @@ const PatientTable: React.FC<{ patients: Patient[] }> = ({ patients }) => {
   const { handleOpen, searchWord } = useContext(GeneralContext);
   return (
     <>
-      <TableContainer component={Paper}>
+      <TableContainer className='shadow-glow' component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead sx={{ backgroundColor: '#000000c4' }}>
             <TableRow>
@@ -80,7 +80,7 @@ const PatientTable: React.FC<{ patients: Patient[] }> = ({ patients }) => {
               <TableCell className="text-specialPurple text-base" >Action</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: "#eae8e0" }}>
+          <TableBody sx={{ backgroundColor: "#FAF9F6" }}>
             {patients.filter(p => search(searchWord, p.phone, p.name, p.petName, p.petAge, p.petType)).map((patient) => (
               <TableRow key={patient._id}>
                 <TableCell className="text-grey text-base" component="th" scope="row">
@@ -92,7 +92,7 @@ const PatientTable: React.FC<{ patients: Patient[] }> = ({ patients }) => {
                 <TableCell className="text-grey text-base" >{patient.petType}</TableCell>
 
                 <TableCell>
-                  <Button onClick={() => handleOpen(patient._id)}><FaEdit className='text-brown' size={22} /></Button>
+                  <Button onClick={() => handleOpen(patient._id)}><FaEdit className='text-orange' size={22} /></Button>
                 </TableCell>
               </TableRow>
             ))}
