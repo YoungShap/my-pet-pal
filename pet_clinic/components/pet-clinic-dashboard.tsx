@@ -71,35 +71,35 @@ const PatientTable: React.FC<{ patients: Patient[] }> = ({ patients }) => {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead sx={{ backgroundColor: '#000000c4' }}>
-            <TableRow sx={{ '& > *': { color: '#adc9f6', fontSize: "16px" } }}>
-              <TableCell>Name</TableCell>
-              <TableCell>Phone</TableCell>
-              <TableCell>Pet Name</TableCell>
-              <TableCell>Pet Age</TableCell>
-              <TableCell>Pet Type</TableCell>
-              <TableCell>Action</TableCell>
+            <TableRow>
+              <TableCell className="text-specialPurple text-base" >Name</TableCell>
+              <TableCell className="text-specialPurple text-base" >Phone</TableCell>
+              <TableCell className="text-specialPurple text-base" >Pet Name</TableCell>
+              <TableCell className="text-specialPurple text-base" >Pet Age</TableCell>
+              <TableCell className="text-specialPurple text-base" >Pet Type</TableCell>
+              <TableCell className="text-specialPurple text-base" >Action</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: "#ecf7ff" }}>
+          <TableBody sx={{ backgroundColor: "#eae8e0" }}>
             {patients.filter(p => search(searchWord, p.phone, p.name, p.petName, p.petAge, p.petType)).map((patient) => (
-              <TableRow sx={{ '& > *': { color: 'black', fontSize: "15px" } }} key={patient._id}>
-                <TableCell component="th" scope="row">
+              <TableRow key={patient._id}>
+                <TableCell className="text-grey text-base" component="th" scope="row">
                   {patient.name}
                 </TableCell>
-                <TableCell>{patient.phone}</TableCell>
-                <TableCell>{patient.petName}</TableCell>
-                <TableCell>{patient.petAge}</TableCell>
-                <TableCell>{patient.petType}</TableCell>
+                <TableCell className="text-grey text-base" >{patient.phone}</TableCell>
+                <TableCell className="text-grey text-base" >{patient.petName}</TableCell>
+                <TableCell className="text-grey text-base" >{patient.petAge}</TableCell>
+                <TableCell className="text-grey text-base" >{patient.petType}</TableCell>
 
                 <TableCell>
-                  <Button onClick={() => handleOpen(patient._id)}><FaEdit size={22} /></Button>
+                  <Button onClick={() => handleOpen(patient._id)}><FaEdit className='text-brown' size={22} /></Button>
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-      <button id='add-btn' className='flex justify-start items-center text-center w-32 mt-6 bg-purple text-white px-4 py-2 rounded-md' onClick={() => handleOpen(undefined)}>
+      <button id='add-btn' className='flex justify-start items-center text-center w-32 mt-6 bg-purple text-white px-4 py-2 rounded-md shadow-glow' onClick={() => handleOpen(undefined)}>
         Add Patient +
       </button>
     </>

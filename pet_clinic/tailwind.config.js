@@ -7,11 +7,13 @@ module.exports = {
   theme: {
     colors: {
       primary: "#92bcff",
-      white:'white',
-      brown: '#8B4513',
-      blue:'#92bcff',
+      white: "white",
+      brown: "#8B4513",
+      blue: "#606ab8",
       purple: "#7c7cff",
-      softWhite:"#dbe7ff"
+      specialPurple:"#adc9f6",
+      softWhite: "#dbe7ff",
+      grey:"#646464",
     },
     fontFamily: {
       mono: ["Roboto", "monospace"],
@@ -21,7 +23,10 @@ module.exports = {
       body: ["Roboto", "sans-serif"],
     },
     extend: {
-      gridTemplateRows: { 
+      boxShadow: {
+        glow: "0 0 10px #0000004f", // Define your glow effect here
+      },
+      gridTemplateRows: {
         "auto-1fr": "auto 1fr",
       },
     },
