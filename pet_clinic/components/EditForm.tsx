@@ -1,4 +1,3 @@
-// EditForm.tsx
 import { IPatient } from "@/lib/interfaces";
 import { Button, TextField } from "@mui/material";
 import { GeneralContext } from "pages";
