@@ -1,8 +1,10 @@
 import { IPatient } from "@/lib/interfaces";
 import { Button, TextField } from "@mui/material";
-import React, { useState } from "react";
+import { GeneralContext } from "pages";
+import React, { useContext, useState } from "react";
 
 const Form = (props: { handleClose: () => void }) => {
+  const { snackbar } = useContext(GeneralContext);
   const [formData, setFormData] = useState<IPatient>({
     name: "",
     phone: "",
@@ -23,7 +25,7 @@ const Form = (props: { handleClose: () => void }) => {
       });
 
       if (response.ok) {
-        console.log('Patient data submitted successfully!');
+        snackbar('Patient Added Successfully');
         props.handleClose();
       } else {
         console.error('Failed to submit patient data:', response.statusText);

@@ -1,10 +1,12 @@
 // EditForm.tsx
 import { IPatient } from "@/lib/interfaces";
 import { Button, TextField } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import { GeneralContext } from "pages";
+import React, { useState, useEffect, useContext } from "react";
 import { FaTrash } from "react-icons/fa";
 
 const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
+    const { snackbar } = useContext(GeneralContext);
     const [formData, setFormData] = useState<IPatient>({
         name: "",
         phone: "",
@@ -48,6 +50,7 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
             if (response.ok) {
                 console.log('Patient data updated successfully!');
                 props.handleClose();
+                snackbar('Patient Updated Successfully');
             } else {
                 console.error('Failed to update patient data:', response.statusText);
             }
@@ -70,6 +73,7 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
                 throw new Error('Failed to delete patient');
             }
             props.handleClose();
+            snackbar('Patient Deleted Successfully');
         } catch (error) {
             console.error('Error deleting patient:', error);
         }
