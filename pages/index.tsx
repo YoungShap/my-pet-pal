@@ -3,7 +3,7 @@ import { PetClinicDashboard } from "@/components/pet-clinic-dashboard";
 import { useCallback, useState } from "react";
 import type { NextPage } from "next";
 import { createContext } from "react";
-import Snackbar from "@/components/SnackBar";
+import Snackbar from "../components/Snackbar";
 
 
 export const GeneralContext = createContext<any>(undefined);
