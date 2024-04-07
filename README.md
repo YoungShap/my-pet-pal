@@ -1,32 +1,39 @@
-# Pet Clinic
+MY FIRST NEXT.JS PROJECT :) 
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Pet Clinic Dashboard
+-
+This project is a single-page application designed to manage clients' information in a pet clinic setting. It offers a user-friendly dashboard with seamless navigation and interaction features. The primary functionalities include adding, editing, and deleting client records, providing a comprehensive CRUD (Create, Read, Update, Delete) experience.
 
-First, install dependencies:
+Features : 
+-
+Client Management: Easily add, edit, and delete client records.
 
-```bash
-yarn install
-```
+Modal Interaction: Utilizes a modal interface that dynamically switches between add and edit forms based on user actions.
 
-Then, run the development server:
+Responsive Design: Ensures compatibility across various devices with responsive design principles.
 
-```bash
-yarn dev
-```
+Technology Stack: Built using Next.js, TypeScript, Tailwind CSS, Material-UI (MUI), and MongoDB Atlas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deployment: Deployed on Heroku for easy access and scalability.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Technologies Used : 
+-
+Next.js,
+TypeScript,
+Tailwind,
+Material-UI (MUI),
+MongoDB Atlas,
+Heroku,
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/patients](http://localhost:3000/api/pateints). This endpoint can be edited in `pages/api/pateints.ts`.
+Usage
+-
+To run the application locally:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Clone the repository.
+Install dependencies using yarn install.
+Set up environment variables, (MONGO_URI).
+Run the development server using yarn run dev.
+Access the application in your browser at http://localhost:3000.
+Deployment
+The application is deployed on Heroku, providing easy access and scalability. You can access the deployed version here : https://my-pet-pal-9cee0ac97410.herokuapp.com/
