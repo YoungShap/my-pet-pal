@@ -8,12 +8,15 @@ const dbName = 'petClinic';
 
 export async function connectToDatabase(): Promise<Db> {
   try {
+    if (!uri) {
+      throw new Error("MONGO_URI is not defined");
+    }
+
     if (cachedDb) {
       return cachedDb;
     }
 
-    cachedClient = new MongoClient(uri, {
-    } as any);
+    cachedClient = new MongoClient(uri, {} as any);
 
     await cachedClient.connect();
     cachedDb = cachedClient.db(dbName);
@@ -26,7 +29,3 @@ export async function connectToDatabase(): Promise<Db> {
     throw error;
   }
 }
-
-
-
-
