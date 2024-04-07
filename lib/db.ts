@@ -3,7 +3,7 @@ import { MongoClient, Db } from 'mongodb';
 let cachedClient: MongoClient | null = null;
 let cachedDb: Db | null = null;
 
-const uri = MONGO_URI;
+const uri = process.env.MONGO_URI;
 const dbName = 'petClinic'; 
 
 export async function connectToDatabase(): Promise<Db> {
