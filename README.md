@@ -8,9 +8,13 @@ This project is a single-page application designed to manage clients' informatio
 Features : 
 -
 Client Management: Easily add, edit, and delete client records.
+
 Modal Interaction: Utilizes a modal interface that dynamically switches between add and edit forms based on user actions.
+
 Responsive Design: Ensures compatibility across various devices with responsive design principles.
+
 Technology Stack: Built using Next.js, TypeScript, Tailwind CSS, Material-UI (MUI), and MongoDB Atlas.
+
 Deployment: Deployed on Heroku for easy access and scalability.
 
 Technologies Used : 
