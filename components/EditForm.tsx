@@ -65,6 +65,11 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
 
     const handleDelete = async (patientId?: string) => {
         try {
+            const isConfirmed = window.confirm("Are you sure you want to delete this patient?");
+            if (!isConfirmed) {
+                return; 
+            }
+    
             const response = await fetch(`/api/patients?id=${patientId}`, {
                 method: 'DELETE',
             });
