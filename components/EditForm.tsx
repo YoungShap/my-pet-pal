@@ -67,9 +67,9 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
         try {
             const isConfirmed = window.confirm("Are you sure you want to delete this patient?");
             if (!isConfirmed) {
-                return; 
+                return;
             }
-    
+
             const response = await fetch(`/api/patients?id=${patientId}`, {
                 method: 'DELETE',
             });
@@ -160,10 +160,10 @@ const EditForm = (props: { handleClose: () => void, patientId?: string }) => {
                 InputProps={{ className: "text-white" }}
             />
             <div>
-                <Button sx={{color:"#e05b5b"}} onClick={() => props.handleClose()}>
+                <Button sx={{ color: "#e05b5b" }} onClick={() => props.handleClose()}>
                     Close
                 </Button>
-                <Button color="primary" type="submit" sx={{color:'#bad7ff'}}>
+                <Button color="primary" type="submit" sx={{ color: '#bad7ff' }}>
                     Save
                 </Button>
             </div>
